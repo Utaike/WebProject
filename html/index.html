@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+  <header class="flex flex-row justify-between items-center text-white bg-[#151515] p-3 fixed w-full z-10">
+    <img class="w-20 h-auto" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:text-[#872624] text-xs">Home</a></li>
+      <li><a href="#" class="hover:text-[#872624] text-xs">About</a></li>
+      <li><a href="#" class="hover:text-[#872624] text-xs">Popular</a></li>
+      <li><a href="#" class="hover:text-[#872624] text-xs">Featured</a></li>
+    </ul>
+    <button type="button" class="open-signin-btn hover:bg-[#3f1313] bg-[#872624] px-2 py-1 text-white text-xs rounded-md">
+      Sign In
+    </button>
+  </header>
+
+  <main class="pt-12">
+    <section class="bg-cover bg-right bg-opacity-75 md:bg-[position:unset] h-screen"
+      style="background-image: url('/img/hero.png');">
+      <div class="absolute inset-0 flex flex-col items-start justify-center px-4 py-6 md:px-8 md:py-10">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-4">
+          <span class="text-red-600">Once</span> you see the <br><span class="text-red-600">results</span>, it
+          becomes<br> <span class="text-red-600">addicting</span>
+        </h1>
+        <p class="w-[220px] sm:w-[420px] mt-8 mb-4 text-gray-400 text-xs sm:text-sm md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget taciti sociisquae ita iusper per conubia
+          nostra, per inceptos himenaeos.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button type="button" id="open-signup-btn"
+            class="bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-200 text-xs sm:text-sm md:text-base">Sign
+            Up</button>
+          <button type="button"
+            class="bg-[#872624] text-white px-4 py-2 rounded-full hover:bg-[#3f1313] text-xs sm:text-sm md:text-base">Download
+            App</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image">
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Get Started</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign up via email or Google to get started.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+              <p class="text-xs">Sign up with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded-md text-sm"
+                aria-label="Email address" />
+              <input type="password" placeholder="Enter your password" class="w-full p-2 mb-4 border rounded-md text-sm"
+                aria-label="Password" />
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                Up</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">Already have an account? <span
+                class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign in</span></p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="signin-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image">
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Welcome Back</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign in via email or Google to continue.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+              <p class="text-xs">Sign in with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded-md text-sm"
+                aria-label="Email address" />
+              <input type="password" placeholder="Enter your password" class="w-full p-2 mb-4 border rounded-md text-sm"
+                aria-label="Password" />
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                In</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">Don't have an account? <span
+                class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign up</span></p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script>
+    const signupModal = document.querySelector('#signup-modal');
+    const signinModal = document.querySelector('#signin-modal');
+    const openSignupBtn = document.querySelector('#open-signup-btn');
+    const openSigninBtn = document.querySelector('.open-signin-btn');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    const signInLink = document.querySelector('.sign-in-link');
+    const signUpLink = document.querySelector('.sign-up-link');
+
+    // Open Sign Up modal
+    openSignupBtn.addEventListener('click', () => {
+      signupModal.classList.remove('hidden', 'opacity-0');
+      signupModal.classList.add('opacity-100');
+    });
+
+    // Open Sign In modal
+    openSigninBtn.addEventListener('click', () => {
+      signinModal.classList.remove('hidden', 'opacity-0');
+      signinModal.classList.add('opacity-100');
+    });
+
+    // Close modals
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        signupModal.classList.add('hidden', 'opacity-0');
+        signinModal.classList.add('hidden', 'opacity-0');
+      });
+    });
+
+    // Toggle to Sign In modal
+    signInLink.addEventListener('click', () => {
+      signupModal.classList.add('hidden', 'opacity-0');
+      signinModal.classList.remove('hidden', 'opacity-0');
+      signinModal.classList.add('opacity-100');
+    });
+
+    // Toggle to Sign Up modal
+    signUpLink.addEventListener('click', () => {
+      signinModal.classList.add('hidden', 'opacity-0');
+      signupModal.classList.remove('hidden', 'opacity-0');
+      signupModal.classList.add('opacity-100');
+    });
+
+    // Close modals when clicking outside
+    signupModal.addEventListener('click', (e) => {
+      if (e.target === signupModal) {
+        signupModal.classList.add('hidden', 'opacity-0');
+      }
+    });
+
+    signinModal.addEventListener('click', (e) => {
+      if (e.target === signinModal) {
+        signinModal.classList.add('hidden', 'opacity-0');
+      }
+    });
+  </script>
+</body>
+
+</html>
