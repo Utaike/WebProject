@@ -19,16 +19,12 @@ Setup
 Clone the Repository:git clone <repository-url>
 cd <project-folder>
 
-
 Install Dependencies:
 Ensure you have a web server environment (e.g., live server extension for VS Code or a local server like XAMPP).
 No additional dependencies are required as Tailwind CSS and Font Awesome are loaded via CDN.
 
-
 Run the Project:
 Open index.html in a web browser via a local server to enable JavaScript functionality.
-
-
 
 File Structure
 
@@ -62,4 +58,3 @@ Acknowledgments
 Tailwind CSS for styling.
 Font Awesome for icons.
 Image assets from external sources (e.g., Cloudinary links).
-
