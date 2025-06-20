@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gradient-to-b from-[#151515] to-[#1a1a1a] text-white">
+  <main>
+    <div id="header-placeholder"></div>
+    <section id="signin-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Welcome Back</h2>
+            <p class="text-gray-600 mb-4 text-xs">
+              Sign in via email or Google to continue.
+            </p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign in with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signinError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">
+                Sign In
+              </button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Don't have an account?
+              <span class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign up</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">
+            ×
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="signup-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Get Started</h2>
+            <p class="text-gray-600 mb-4 text-xs">
+              Sign up via email or Google to get started.
+            </p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign up with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signupError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">
+                Sign Up
+              </button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Already have an account?
+              <span class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign in</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">
+            ×
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative h-[500px] w-full overflow-hidden text-white">
+      <!-- Background image -->
+      <img class="h-full w-full object-cover object-center"
+        src="https://images.unsplash.com/photo-1621750627159-cf77b0b91aac?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Performance workout">
+
+      <!-- Text overlay - ONLY CHANGED THE TEXT SIZES FOR MOBILE -->
+      <div class="absolute top-[60%] md:inset-0 flex items-center">
+        <div class="container mx-auto px-8">
+          <h2 class="text-xl sm:text-3xl md:text-4xl md:text-6xl font-bold leading-tight max-w-2xl">
+            BULL FOR PERFORMANCE<br>
+            <span class="text-red-600">MADE FOR YOU</span>
+          </h2>
+          <p class="mt-6 text-base sm:text-lg md:text-xl max-w-lg">
+            High-performance software: designed to move with you power your workouts with Lift&Fit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-8">
+      <h3 class="font-bold text-2xl mb-6">Meet Our Team</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 - Existing -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcQr58qVANMH4zJSdwQMotBvPeUjjUFVjVmw&s"
+            alt="Weight lifting">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Chris Bumstead</h3>
+            <p class="text-gray-300 mb-4">He has competed and won many awards including the ARNOLD CLASSIC & Mr.
+              OLYMPIA.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 - New -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover"
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            alt="Personal trainer">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Sarah Johnson</h3>
+            <p class="text-gray-300 mb-4">Certified personal trainer with 10+ years experience specializing in
+              functional fitness and mobility.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 - New -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover"
+            src="https://images.unsplash.com/photo-1533681904393-9ab6eee7e408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            alt="Yoga instructor">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Maya Rodriguez</h3>
+            <p class="text-gray-300 mb-4">RYT-500 yoga instructor with expertise in vinyasa flow and injury prevention
+              techniques.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 - New -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover" src="/img/image.png" alt="Strength coach">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Hany Rambod</h3>
+            <p class="text-gray-300 mb-4">Strength and conditioning coach who trains professional athletes and Olympic
+              competitors.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 - New -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover"
+            src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            alt="Nutritionist">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Dr. Emma Chen</h3>
+            <p class="text-gray-300 mb-4">Sports nutritionist with a PhD in Nutritional Sciences, helping clients
+              optimize performance through diet.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 - New -->
+        <div
+          class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+          <img class="w-full h-52 object-cover"
+            src="data:image/jpeg;base64,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"
+            alt="CrossFit trainer">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Marcus Taylor</h3>
+            <p class="text-gray-300 mb-4">CrossFit Level 3 Trainer and 3-time regional competitor, specializing in
+              high-intensity training.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 px-4 sm:px-8 bg-[#1a1a1a] text-white">
+      <div class="container mx-auto max-w-6xl">
+        <!-- Vision Section -->
+        <div class="mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-red-600">OUR VISION</h2>
+          <div class="bg-[#1e1e1e] p-8 rounded-lg border-l-4 border-red-600">
+            <p class="text-lg md:text-xl leading-relaxed">
+              To empower every individual in their fitness journey with confidence, discipline, and purpose.
+              Our training systems are designed to measure performance and build physical strength while
+              fostering mental resilience and personal growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-red-600">OUR MISSION</h2>
+          <div class="bg-[#1e1e1e] p-8 rounded-lg border-l-4 border-red-600">
+            <p class="text-lg md:text-xl leading-relaxed mb-6">
+              Through Lift&Fit, we provide high-performance training programs and global-standard equipment
+              that create opportunities for personal transformation. We ensure our members achieve their
+              fitness goals through scientifically-proven methods and shared community experiences.
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed">
+              As your trusted fitness partner, we offer comprehensive support - from personalized coaching
+              to performance tracking and nutritional guidance. Our certified trainers are committed to
+              helping you overcome challenges and maximize your potential.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer-placeholder"></div>
+  </main>
+  <script type="module" src="/js/auth.js"></script>
+  <script type="module" src="/js/loadComponent.js"></script>
+</body>
+
+</html>

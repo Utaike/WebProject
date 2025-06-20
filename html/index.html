@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
-<body class="bg-gray-900 text-white">
-  <header class="flex flex-row justify-between items-center text-white bg-[#151515] p-3 fixed w-full z-10">
-    <img class="w-20 h-auto" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
-    <ul class="flex space-x-6">
-      <li><a href="#" class="hover:text-[#872624] text-xs">Home</a></li>
-      <li><a href="#" class="hover:text-[#872624] text-xs">About</a></li>
-      <li><a href="#" class="hover:text-[#872624] text-xs">Popular</a></li>
-      <li><a href="#" class="hover:text-[#872624] text-xs">Featured</a></li>
-    </ul>
-    <button type="button" class="open-signin-btn hover:bg-[#3f1313] bg-[#872624] px-2 py-1 text-white text-xs rounded-md">
-      Sign In
-    </button>
-  </header>
+<body class="bg-gradient-to-b from-[#151515] to-[#1a1a1a] text-white">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
 
   <main class="pt-12">
-    <section class="bg-cover bg-right bg-opacity-75 md:bg-[position:unset] h-screen"
-      style="background-image: url('/img/hero.png');">
+    <section class="bg-cover bg-right bg-opacity-75 md:bg-[position:unset] h-[600px]"
+      style="background-image: url('/img/hero.png')">
       <div class="absolute inset-0 flex flex-col items-start justify-center px-4 py-6 md:px-8 md:py-10">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-4">
-          <span class="text-red-600">Once</span> you see the <br><span class="text-red-600">results</span>, it
-          becomes<br> <span class="text-red-600">addicting</span>
+          <span class="text-red-600">Once</span> you see the <br /><span class="text-red-600">results</span>, it
+          becomes<br />
+          <span class="text-red-600">addicting</span>
         </h1>
-        <p class="w-[220px] sm:w-[420px] mt-8 mb-4 text-gray-400 text-xs sm:text-sm md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget taciti sociisquae ita iusper per conubia
-          nostra, per inceptos himenaeos.
+        <p class="w-[200px] sm:w-[400px] mt-8 mb-4 text-gray-400 text-xs sm:text-sm md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget
+          taciti sociisquae ita iusper per conubia nostra, per inceptos
+          himenaeos.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <button type="button" id="open-signup-btn"
-            class="bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-200 text-xs sm:text-sm md:text-base">Sign
-            Up</button>
+            class="bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-200 text-xs sm:text-sm md:text-base">
+            Sign Up
+          </button>
           <button type="button"
-            class="bg-[#872624] text-white px-4 py-2 rounded-full hover:bg-[#3f1313] text-xs sm:text-sm md:text-base">Download
-            App</button>
+            class="bg-[#872624] text-white px-4 py-2 rounded-full hover:bg-[#3f1313] text-xs sm:text-sm md:text-base">
+            Download App
+          </button>
         </div>
       </div>
+      
+      <div class="hidden absolute bottom-0 inset-x-0 sm:flex flex-col items-center animate-bounce" style="animation: bounce 2s infinite;">
+      <span class="text-sm text-slate-400 mb-2 font-bold">SCROLL</span>
+      <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
     </section>
-
     <section id="signup-modal"
       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
       <div class="flex items-center">
         <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
-          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image">
-          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
         </div>
         <div
           class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
@@ -58,33 +60,35 @@
             <p class="text-gray-600 mb-4 text-xs">Sign up via email or Google to get started.</p>
             <button type="button"
               class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
-              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
               <p class="text-xs">Sign up with Google</p>
             </button>
             <div class="text-center my-4 text-gray-400">OR</div>
             <form>
-              <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded-md text-sm"
-                aria-label="Email address" />
-              <input type="password" placeholder="Enter your password" class="w-full p-2 mb-4 border rounded-md text-sm"
-                aria-label="Password" />
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signupError text-xs mb-4 hidden"></div>
               <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
                 Up</button>
             </form>
-            <p class="text-center mt-4 text-sm text-gray-600">Already have an account? <span
-                class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign in</span></p>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Already have an account? <span class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign
+                in</span>
+            </p>
           </div>
           <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
             aria-label="Close modal">×</button>
         </div>
       </div>
     </section>
-
     <section id="signin-modal"
       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
       <div class="flex items-center">
         <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
-          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image">
-          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
         </div>
         <div
           class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
@@ -93,86 +97,282 @@
             <p class="text-gray-600 mb-4 text-xs">Sign in via email or Google to continue.</p>
             <button type="button"
               class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
-              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
               <p class="text-xs">Sign in with Google</p>
             </button>
             <div class="text-center my-4 text-gray-400">OR</div>
             <form>
-              <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded-md text-sm"
-                aria-label="Email address" />
-              <input type="password" placeholder="Enter your password" class="w-full p-2 mb-4 border rounded-md text-sm"
-                aria-label="Password" />
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signinError text-xs mb-4 hidden"></div>
               <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
                 In</button>
             </form>
-            <p class="text-center mt-4 text-sm text-gray-600">Don't have an account? <span
-                class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign up</span></p>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Don't have an account? <span class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign
+                up</span>
+            </p>
           </div>
           <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
             aria-label="Close modal">×</button>
         </div>
       </div>
     </section>
+<section class="py-12 px-4 sm:px-8 bg-[#1a1a1a]">
+  <div class="container mx-auto">
+    <!-- Section Header -->
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">
+        Explore Our <span class="text-red-600">Programs</span>
+      </h2>
+      <div class="flex space-x-2">
+        <button id="prevBtn" class="bg-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="nextBtn" class="bg-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Program Cards -->
+    <div id="slider" class="relative overflow-hidden">
+      <div class="flex space-x-6 overflow-x-auto scrollbar-hide scroll-smooth pb-6">
+        <!-- Cardio Strength -->
+        <a href="programdetails.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                 alt="Cardio Strength" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">NEW</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-dumbbell text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Cardio Strength</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">Combine cardio with strength training for optimal heart health and muscle tone</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>45-60 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-fire mr-1"></i>
+              <span>500-800 cal</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fat Loss -->
+        <a href="/pages/fat-loss.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" 
+                 alt="Fat Loss" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-fire text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Fat Loss</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">High-intensity workouts designed to maximize calorie burn and fat loss</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>30-45 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-fire mr-1"></i>
+              <span>600-900 cal</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Muscle Gain -->
+        <a href="/pages/muscle-gain.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1533681904393-9ab6eee7e408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" 
+                 alt="Muscle Gain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-weight-hanging text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Muscle Gain</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">Progressive overload training to build lean muscle mass effectively</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>60-75 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-dumbbell mr-1"></i>
+              <span>Heavy Weights</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Yoga & Mobility -->
+        <a href="/pages/yoga-mobility.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                 alt="Yoga & Mobility" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-spa text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Yoga & Mobility</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">Improve flexibility, balance, and joint health with guided sessions</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>45-60 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-heartbeat mr-1"></i>
+              <span>Low Impact</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CrossFit -->
+        <a href="/pages/crossfit.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                 alt="CrossFit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">NEW</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-bolt text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">CrossFit</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">High-intensity functional training combining weightlifting and gymnastics</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>60 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-trophy mr-1"></i>
+              <span>Competitive</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Senior Fitness -->
+        <a href="/pages/senior-fitness.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                 alt="Senior Fitness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-user text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Senior Fitness</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">Low-impact exercises focused on mobility, balance, and strength</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>30-45 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-heart mr-1"></i>
+              <span>Gentle</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Postnatal Recovery -->
+        <a href="/pages/postnatal-recovery.html" class="flex-shrink-0 w-72 h-96 bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-xl overflow-hidden group transition-transform duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                 alt="Postnatal Recovery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-baby text-red-600 mr-2"></i>
+              <h3 class="text-xl font-bold">Postnatal Recovery</h3>
+            </div>
+            <p class="text-gray-300 text-sm mb-4">Specialized program to rebuild core strength after pregnancy</p>
+            <div class="flex items-center text-xs text-gray-400">
+              <i class="fas fa-clock mr-1"></i>
+              <span>30-45 min</span>
+              <span class="mx-2">•</span>
+              <i class="fas fa-user-md mr-1"></i>
+              <span>Expert Approved</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 px-4 bg-[#1a1a1a]">
+  <div class="container mx-auto max-w-5xl">
+    <h2 class="text-3xl font-bold mb-4 text-center">
+      <span class="text-red-600">CHOOSE</span> YOUR LEVEL
+    </h2>
+    <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+      Select the plan that matches your fitness ambition
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Basic Tier -->
+      <div class="bg-[#1e1e1e] rounded-lg p-8 border border-gray-700 hover:border-red-600 transition-colors">
+        <h3 class="text-2xl font-bold mb-2">ESSENTIAL</h3>
+        <p class="text-red-600 text-sm mb-6">Great for beginners</p>
+        <p class="text-4xl font-bold mb-6">$29<span class="text-lg text-gray-400">/month</span></p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Gym Access</li>
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Basic Workouts</li>
+          <li class="flex items-center text-gray-500"><i class="fas fa-times  mr-2"></i> Personal Coaching</li>
+        </ul>
+        <button class="w-full bg-transparent border border-white py-3 rounded-md hover:bg-red-600 hover:border-red-600 transition">
+          Get Started
+        </button>
+      </div>
+      
+      <!-- Popular Tier -->
+      <div class="bg-gradient-to-br from-[#1e1e1e] to-[#2a1a1a] rounded-lg p-8 border border-red-600 transform hover:scale-[1.02] transition-transform">
+        <div class="absolute top-0 right-0 bg-red-600 text-xs font-bold px-3 py-1 rounded-bl-lg">MOST POPULAR</div>
+        <h3 class="text-2xl font-bold mb-2">PERFORMANCE</h3>
+        <p class="text-red-600 text-sm mb-6">For serious athletes</p>
+        <p class="text-4xl font-bold mb-6">$79<span class="text-lg text-gray-400">/month</span></p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Unlimited Gym Access</li>
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Advanced Programs</li>
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Bi-Weekly Coaching</li>
+        </ul>
+        <button class="w-full bg-red-600 py-3 rounded-md hover:bg-red-700 transition">
+          Get Started
+        </button>
+      </div>
+      
+      <!-- Elite Tier -->
+      <div class="bg-[#1e1e1e] rounded-lg p-8 border border-gray-700 hover:border-red-600 transition-colors">
+        <h3 class="text-2xl font-bold mb-2">ELITE</h3>
+        <p class="text-red-600 text-sm mb-6">Total transformation</p>
+        <p class="text-4xl font-bold mb-6">$199<span class="text-lg text-gray-400">/month</span></p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> 24/7 Gym Access</li>
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Custom Programs</li>
+          <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Daily 1-on-1 Coaching</li>
+        </ul>
+        <button class="w-full bg-transparent border border-white py-3 rounded-md hover:bg-red-600 hover:border-red-600 transition">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 
-  <footer></footer>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-  <script>
-    const signupModal = document.querySelector('#signup-modal');
-    const signinModal = document.querySelector('#signin-modal');
-    const openSignupBtn = document.querySelector('#open-signup-btn');
-    const openSigninBtn = document.querySelector('.open-signin-btn');
-    const closeBtns = document.querySelectorAll('.close-btn');
-    const signInLink = document.querySelector('.sign-in-link');
-    const signUpLink = document.querySelector('.sign-up-link');
-
-    // Open Sign Up modal
-    openSignupBtn.addEventListener('click', () => {
-      signupModal.classList.remove('hidden', 'opacity-0');
-      signupModal.classList.add('opacity-100');
-    });
-
-    // Open Sign In modal
-    openSigninBtn.addEventListener('click', () => {
-      signinModal.classList.remove('hidden', 'opacity-0');
-      signinModal.classList.add('opacity-100');
-    });
-
-    // Close modals
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        signupModal.classList.add('hidden', 'opacity-0');
-        signinModal.classList.add('hidden', 'opacity-0');
-      });
-    });
-
-    // Toggle to Sign In modal
-    signInLink.addEventListener('click', () => {
-      signupModal.classList.add('hidden', 'opacity-0');
-      signinModal.classList.remove('hidden', 'opacity-0');
-      signinModal.classList.add('opacity-100');
-    });
-
-    // Toggle to Sign Up modal
-    signUpLink.addEventListener('click', () => {
-      signinModal.classList.add('hidden', 'opacity-0');
-      signupModal.classList.remove('hidden', 'opacity-0');
-      signupModal.classList.add('opacity-100');
-    });
-
-    // Close modals when clicking outside
-    signupModal.addEventListener('click', (e) => {
-      if (e.target === signupModal) {
-        signupModal.classList.add('hidden', 'opacity-0');
-      }
-    });
-
-    signinModal.addEventListener('click', (e) => {
-      if (e.target === signinModal) {
-        signinModal.classList.add('hidden', 'opacity-0');
-      }
-    });
-  </script>
+  <script src="/js/index.js"></script>
+  <script type="module" src="/js/auth.js"></script>
+  <script type="module" src="/js/loadComponent.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gradient-to-b from-[#151515] to-[#1a1a1a] text-white">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="pt-12">
+    <section id="signin-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Welcome Back</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign in via email or Google to continue.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign in with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signinError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                In</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Don't have an account? <span class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign
+                up</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+    <section id="signup-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Get Started</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign up via email or Google to get started.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign up with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signupError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                Up</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Already have an account? <span class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign
+                in</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+    <!-- Simple Content for Program Page -->
+    <!-- Replace your existing section with this -->
+    <section class="relative">
+      <!-- Mobile controls -->
+      <div class="md:hidden flex items-center justify-between px-4 mb-2">
+        <p id="pages">1/3</p>
+        <div class="flex gap-2">
+          <button id="prevBtn" class="bg-white rounded-full p-2 hover:bg-gray-200 focus:outline-none">
+            <i class="fas fa-chevron-left text-gray-800"></i>
+          </button>
+          <button id="nextBtn" class="bg-white rounded-full p-2 hover:bg-gray-200 focus:outline-none">
+            <i class="fas fa-chevron-right text-gray-800"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img id="hero_img" class="h-[440px] w-full md:h-auto object-cover"
+          src="https://res.cloudinary.com/ggus-dev/image/private/s--sysPAzHV--/c_auto,g_auto,w_2664,h_1082/v1/25fcf1e9/goldsgym-personal-training.jpg.webp?_a=BAAAV6DQ"
+          alt="">
+
+        <div class="absolute top-[40%] left-0 right-0 px-12">
+          <div class="relative">
+            <!-- Slider container -->
+            <div id="slider"
+              class="flex gap-x-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory md:overflow-x-visible md:justify-center">
+              <!-- Card 1 -->
+              <div onclick="changeSection('personal')" id="personal"
+                class="flex-shrink-0 card p-5 sm:p-6 w-[75vw] md:w-[420px] h-[230px] md:h-auto bg-gradient-to-br from-[#872624] to-[#353534] snap-start cursor-pointer">
+                <p class="text-3xl sm:text-4xl font-bold mb-8">Personal training</p>
+                <p class="text-sm sm:text-md font-thin">Lift&Fit offers training for everyone, from beginners to pros. Whether
+                  using free weights to build strength or Gym80 equipment for precision, we have the tools to help you
+                  reach your fitness goals.</p>
+              </div>
+
+              <!-- Card 2 -->
+              <div onclick="changeSection('group')" id="group"
+                class="flex-shrink-0 card p-5 sm:p-6 w-[75vw] md:w-[420px] h-[230px] md:h-auto bg-gray-800 snap-start cursor-pointer">
+                <p class="text-3xl sm:text-4xl font-bold mb-8">Group classes</p>
+                <p class="text-sm sm:text-md font-thin">Join our fun, energetic group classes like Zumba or BodyPump that cater to
+                  all fitness levels. Whether you’re into cardio, strength, or flexibility, our group classes will keep
+                  you fit and motivated.</p>
+              </div>
+
+              <!-- Card 3 -->
+              <div onclick="changeSection('fitness')" id="fitness"
+                class="flex-shrink-0 card p-5 sm:p-6 w-[75vw] md:w-[420px] h-[230px] md:h-auto bg-gray-800 snap-start cursor-pointer">
+                <p class="text-3xl sm:text-4xl font-bold mb-8">Achieve your fitness goal</p>
+                <p class="text-sm sm:text-md font-thin">Achieve your fitness goals with Gold’s Gym personal training. Our personal
+                  trainers design customized workout plans and offer expert guidance to help you reach peak pe</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="font-bold text-3xl mb-6">Explore wide varieties of programs</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- WeightLifting Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://plus.unsplash.com/premium_photo-1664298367434-0408974ab0bb?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2VpZ2h0JTIwbGlmdGluZ3xlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Weight lifting">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">WeightLifting</h3>
+        <p class="text-gray-300 mb-4">The ultimate guide to mastering strength training fundamentals with proper techniques and tailored workouts.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>25:40 min/day</span>
+          <span>20 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reignner Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29ya291dHxlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Reignner workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">REIGNNER</h3>
+        <p class="text-gray-300 mb-4">4-week summer program designed to transform your body with intensive full-body workouts.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>25:40 min/day</span>
+          <span>20 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lean Arms Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXJtJTIwd29ya291dHxlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Lean arms workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">INTERMEDIATE</h3>
+        <p class="text-gray-300 mb-4">3-week lean arms challenge focusing on toning and sculpting your upper body.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>30:40 min/day</span>
+          <span>21 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hourglass Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzJTIwd29ya291dHxlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Abs and butt workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">BEGINNER</h3>
+        <p class="text-gray-300 mb-4">Hourglass program targeting abs and butt for a sculpted core and lower body.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>25:30 min/day</span>
+          <span>14 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flat Belly Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWJzJTIwd29ya291dHxlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Flat belly challenge">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">BEGINNER</h3>
+        <p class="text-gray-300 mb-4">28-day flat belly challenge with core-focused exercises and nutrition tips.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>15:20 min/day</span>
+          <span>28 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yoga Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D" 
+           alt="Yoga workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">YOGA FLOW</h3>
+        <p class="text-gray-300 mb-4">Mind-body connection with this 21-day yoga program for flexibility and strength.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>20:00 min/day</span>
+          <span>21 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calisthenics Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FsaXN0aGVuaWNzfGVufDB8fDB8fHww" 
+           alt="Calisthenics workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">CALISTHENICS</h3>
+        <p class="text-gray-300 mb-4">Master bodyweight movements with this progressive 30-day calisthenics program for functional strength.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>35:00 min/day</span>
+          <span>30 days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bodybuilding Card -->
+    <div class="bg-[#1e1e1e] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:border-[#872624]">
+      <img class="w-full h-48 object-cover" 
+           src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9keWJ1aWxkaW5nfGVufDB8fDB8fHww" 
+           alt="Bodybuilding workout">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-2">BODYBUILDING</h3>
+        <p class="text-gray-300 mb-4">12-week hypertrophy program focused on muscle growth and definition through progressive overload.</p>
+        <div class="flex justify-between text-sm text-gray-400">
+          <span>45:00 min/day</span>
+          <span>84 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <div id="footer-placeholder"></div>
+
+  </main>
+
+  <script>
+    // Slider functionality
+    const slider = document.getElementById('slider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const cards = document.querySelectorAll('.card');
+    const pagesCounter = document.getElementById('pages');
+
+    let currentIndex = 0;
+    const cardCount = cards.length;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+
+    function updateCounter() {
+      pagesCounter.textContent = `${currentIndex + 1}/${cardCount}`;
+    }
+
+    function scrollToCard(index) {
+      currentIndex = index;
+
+      // Only scroll on mobile
+      if (window.innerWidth < 768) {
+        const cardWidth = cards[0].offsetWidth + 24; // width + gap
+        slider.scrollTo({
+          left: index * cardWidth,
+          behavior: 'smooth'
+        });
+      }
+
+      updateActiveCard();
+      updateCounter();
+    }
+
+    function updateActiveCard() {
+      cards.forEach((card, index) => {
+        if (index === currentIndex) {
+          card.classList.remove('bg-gray-800');
+          card.classList.add('bg-gradient-to-br', 'from-[#872624]', 'to-[#353534]');
+          changeHeroImage(card.id);
+        } else {
+          card.classList.remove('bg-gradient-to-br', 'from-[#872624]', 'to-[#353534]');
+          card.classList.add('bg-gray-800');
+        }
+      });
+    }
+
+    function changeHeroImage(id) {
+      const img = document.getElementById('hero_img');
+      if (id === 'personal') {
+        img.src = 'https://res.cloudinary.com/ggus-dev/image/private/s--sysPAzHV--/c_auto,g_auto,w_2664,h_1082/v1/25fcf1e9/goldsgym-personal-training.jpg.webp?_a=BAAAV6DQ';
+      } else if (id === 'group') {
+        img.src = 'https://res.cloudinary.com/ggus-dev/image/private/s--EasxIMnU--/c_auto,g_auto,w_2664,h_1082/v1/25fcf1e9/goldsgym-group-fitness.jpg.webp?_a=BAAAV6DQ';
+      } else if (id === 'fitness') {
+        img.src = 'https://res.cloudinary.com/ggus-dev/image/private/s--UIi8ZA0V--/c_auto,g_auto,w_2664,h_1082/v1/25fcf1e9/goldsgym-achieve-your-goals.jpg.webp?_a=BAAAV6DQ';
+      }
+    }
+
+    // Handle card clicks - improved for mobile
+    function setupCardClicks() {
+      cards.forEach((card) => {
+        card.addEventListener('click', (e) => {
+          // Prevent accidental clicks during swipe
+          if (isDragging) return;
+
+          const id = card.id;
+          const index = Array.from(cards).findIndex(c => c.id === id);
+          scrollToCard(index);
+        });
+      });
+    }
+
+    // Handle button clicks
+    nextBtn.addEventListener('click', () => {
+      scrollToCard((currentIndex + 1) % cardCount);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      scrollToCard((currentIndex - 1 + cardCount) % cardCount);
+    });
+
+    // Handle scroll events to detect current card (mobile only)
+    slider.addEventListener('touch', () => {
+      if (window.innerWidth >= 768) return;
+
+      const cardWidth = cards[0].offsetWidth + 24;
+      const newIndex = Math.round(slider.scrollLeft / cardWidth);
+      if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        updateActiveCard();
+        updateCounter();
+      }
+    });
+
+
+    // Initialize
+    setupCardClicks();
+    updateActiveCard();
+    updateCounter();
+
+    // Handle window resize
+    function handleResize() {
+      if (window.innerWidth >= 768) {
+        // On desktop, reset to first card
+        currentIndex = 0;
+        updateActiveCard();
+        updateCounter();
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+  </script>
+
+  </script>
+  <script type="module" src="/js/auth.js"></script>
+  <script type="module" src="/js/loadComponent.js"></script>
+</body>
+
+</html>

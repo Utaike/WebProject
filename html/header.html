@@ -1,0 +1,47 @@
+<header class="flex flex-row justify-between items-center bg-[#151515] p-2 fixed w-full z-10">
+  <!-- Logo -->
+  <img class="w-20 h-auto" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+
+  <!-- Desktop Menu -->
+  <ul class="hidden text-white sm:flex space-x-6">
+    <li><a href="index.html" class="hover:text-[#872624] active:text-[#7f0512] text-xs">Home</a></li>
+    <li><a href="about.html" class="hover:text-[#872624] active:text-[#7f0512] text-xs">About</a></li>
+    <li><a href="popular.html" class="hover:text-[#872624] active:text-[#7f0512] text-xs">Popular</a></li>
+    <li><a href="community.html" class="hover:text-[#872624] active:text-[#7f0512] text-xs">Community</a></li>
+  </ul>
+
+  <!-- User Area + Mobile Menu Button -->
+  <div class="flex items-center space-x-2">
+    <!-- Profile Image Placeholder -->
+    <div class="rounded-xl w-[30px] h-[30px] overflow-hidden">
+      <img src="https://via.placeholder.com/42" id="profile-btn"
+        class="w-full h-auto rounded-lg cursor-pointer hover:opacity-90 transition duration-300"
+        alt="User">
+    </div>
+
+    <!-- Buttons -->
+    <button type="button" class="open-signin-btn hover:bg-[#3f1313] bg-[#872624] px-2 py-1 text-white text-xs rounded-xl">
+      Sign In
+    </button>
+    <button type="button" id="signout-btn"
+      class="hover:bg-[#3f1313] bg-[#872624] px-2 py-1 text-white text-xs rounded-xl hidden">
+      Sign Out
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <div class="relative sm:hidden">
+      <button class="menu-btn">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+      <!-- Mobile Menu -->
+      <ul id="mobileMenu"
+        class="hidden absolute top-12 right-0 bg-[#252525] p-4 space-y-2 rounded-lg z-50 w-20 shadow-lg">
+        <li><a href="index.html" class="block hover:text-[#872624] text-xs">Home</a></li>
+        <li><a href="about.html" class="block hover:text-[#872624] text-xs">About</a></li>
+        <li><a href="popular.html" class="block hover:text-[#872624] text-xs">Popular</a></li>
+        <li><a href="community.html" class="block hover:text-[#872624] text-xs">Community</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

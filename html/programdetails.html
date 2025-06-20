@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <main>
+    <div id="header-placeholder"></div>
+    <section id="signin-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Welcome Back</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign in via email or Google to continue.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign in with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signinError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                In</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Don't have an account? <span class="sign-up-link text-[#872624] hover:underline cursor-pointer">Sign
+                up</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+    <section id="signup-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+      <div class="flex items-center">
+        <div class="relative sm:w-[300px] sm:h-[430px] sm:block hidden">
+          <img class="w-full h-full object-cover rounded-l-lg" src="/img/modal.png" alt="Modal Image" />
+          <img class="absolute top-2 left-2 w-16" src="/img/Lift & Fit.png" alt="Lift & Fit Logo" />
+        </div>
+        <div
+          class="bg-white text-black p-6 w-[300px] h-[430px] flex flex-col justify-between sm:rounded-l-none sm:rounded-r-lg rounded-lg">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Get Started</h2>
+            <p class="text-gray-600 mb-4 text-xs">Sign up via email or Google to get started.</p>
+            <button type="button"
+              class="w-full flex items-center justify-center bg-gray-100 text-gray-800 p-2 rounded-md mb-4 hover:bg-gray-200">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2" />
+              <p class="text-xs">Sign up with Google</p>
+            </button>
+            <div class="text-center my-4 text-gray-400">OR</div>
+            <form>
+              <input type="email" name="email" placeholder="Enter your email" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Email address" />
+              <input type="password" name="password" placeholder="Enter your password" required
+                class="w-full p-2 mb-4 border rounded-md text-sm" aria-label="Password" />
+              <div class="signupError text-xs mb-4 hidden"></div>
+              <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 text-sm">Sign
+                Up</button>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+              Already have an account? <span class="sign-in-link text-[#872624] hover:underline cursor-pointer">Sign
+                in</span>
+            </p>
+          </div>
+          <button type="button" class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+            aria-label="Close modal">×</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4 bg-[#1a1a1a] text-white">
+      <div class="container mx-auto max-w-6xl">
+        <!-- Program Header -->
+        <div class="flex flex-col md:flex-row gap-12 mb-16">
+          <div class="md:w-1/2">
+            <div class="bg-[#872624] text-xs font-bold px-3 py-1 rounded-full w-max mb-4">MOST POPULAR</div>
+            <h1 class="text-4xl font-bold mb-4">CARDIO STRENGTH</h1>
+            <p class="text-gray-300 mb-6">
+              A hybrid program combining heart-pumping cardio with muscle-building strength exercises.
+              Perfect for those wanting to improve endurance while gaining lean muscle.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-8">
+              <div class="bg-[#1e1e1e] px-4 py-2 rounded-full">
+                <span class="text-red-600 mr-2"><i class="fas fa-fire"></i></span>
+                <span>Calorie Burn: 500-800/session</span>
+              </div>
+              <div class="bg-[#1e1e1e] px-4 py-2 rounded-full">
+                <span class="text-red-600 mr-2"><i class="fas fa-clock"></i></span>
+                <span>45-60 min/session</span>
+              </div>
+            </div>
+            <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-bold transition-colors">
+              JOIN THIS PROGRAM
+            </button>
+          </div>
+          <div class="md:w-1/2">
+            <div class="relative h-96 rounded-xl overflow-hidden">
+              <img src="https://plus.unsplash.com/premium_photo-1726328925629-0511220f27f1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhcmRpbyUyMHN0cmVuZ3RoJTIwdHJhaW5pbmd8ZW58MHx8MHx8fDA%3D" alt="Cardio Strength Training" class="w-full h-full object-cover">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-red-600">
+                    <img
+                      src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zml0bmVzc3xlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Trainer" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-300">Lead Trainer</p>
+                    <p class="font-bold">Jamie Rivera</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Details Tabs -->
+        <div class="mb-12">
+          <div class="flex border-b border-gray-700">
+            <button class="program-tab active px-6 py-3 font-medium border-b-2 border-red-600" data-tab="overview">Overview</button>
+            <button class="program-tab px-6 py-3 font-medium text-gray-400" data-tab="curriculum">Curriculum</button>
+            <button class="program-tab px-6 py-3 font-medium text-gray-400" data-tab="trainers">Trainers</button>
+            <button class="program-tab px-6 py-3 font-medium text-gray-400" data-tab="results">Results</button>
+          </div>
+
+          <div class="py-8">
+            <div class="program-tab-content active" id="overview-content">
+              <h3 class="text-2xl font-bold mb-4">Program Breakdown</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-bold mb-3 text-red-600 flex items-center">
+                    <i class="fas fa-dumbbell mr-2"></i> Strength Components
+                  </h4>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>Compound lifts (squats, deadlifts, bench press)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>Functional resistance training</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>Progressive overload system</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-3 text-red-600 flex items-center">
+                    <i class="fas fa-heartbeat mr-2"></i> Cardio Components
+                  </h4>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>HIIT intervals (30s on/30s off)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>Endurance circuits</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2">✓</span>
+                      <span>Metabolic conditioning</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-tab-content hidden" id="curriculum-content">
+              <h3 class="text-2xl font-bold mb-4">Program Curriculum</h3>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-red-600">Week 1-4: Foundation Phase</h4>
+                  <ul class="space-y-2 pl-5">
+                    <li class="list-disc">Basic movement patterns introduction</li>
+                    <li class="list-disc">Cardio endurance building</li>
+                    <li class="list-disc">Technique perfection</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-red-600">Week 5-8: Intensity Phase</h4>
+                  <ul class="space-y-2 pl-5">
+                    <li class="list-disc">Increased weight loads</li>
+                    <li class="list-disc">High-intensity interval training</li>
+                    <li class="list-disc">Compound movement combinations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-tab-content hidden" id="trainers-content">
+              <h3 class="text-2xl font-bold mb-4">Our Expert Trainers</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex items-start">
+                  <div class="w-24 h-24 rounded-full overflow-hidden mr-6 flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZpdG5lc3N8ZW58MHx8MHx8fDA%3D" alt="Trainer Jamie" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold">Jamie Rivera</h4>
+                    <p class="text-red-600 mb-2">Lead Trainer</p>
+                    <p class="text-gray-300">With over 10 years of experience in hybrid training, Jamie specializes in creating programs that maximize both strength and endurance.</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="w-24 h-24 rounded-full overflow-hidden mr-6 flex-shrink-0">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Trainer Alex" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold">Alex Morgan</h4>
+                    <p class="text-red-600 mb-2">Strength Specialist</p>
+                    <p class="text-gray-300">Former competitive powerlifter with a passion for teaching proper form and progressive overload techniques.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-tab-content hidden" id="results-content">
+              <h3 class="text-2xl font-bold mb-4">Member Results</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#1e1e1e] p-6 rounded-lg">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://t3.ftcdn.net/jpg/11/47/81/36/240_F_1147813696_dzlWntRX0lmzx9TCje09PF8izx4WJbyM.jpg"
+                        alt="Member" class="w-full h-full">
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Sarah K.</h4>
+                      <p class="text-sm text-gray-400">Lost 28lbs in 12 weeks</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "The cardio-strength combo helped me shed fat while maintaining muscle. I've never been this toned!"
+                  </p>
+                </div>
+                <div class="bg-[#1e1e1e] p-6 rounded-lg">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img src="https://randomuser.me/api/portraits/men/44.jpg"
+                        alt="Member" class="w-full h-full">
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Michael T.</h4>
+                      <p class="text-sm text-gray-400">Gained 15lbs muscle</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-300">
+                    "As someone who always struggled to gain weight, this program gave me the perfect balance of strength and conditioning."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equipment Needed -->
+        <div class="bg-[#1e1e1e] rounded-xl p-8 mb-12">
+          <h3 class="text-2xl font-bold mb-6 flex items-center">
+            <i class="fas fa-dumbbell text-red-600 mr-3"></i>
+            EQUIPMENT NEEDED
+          </h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-[#2a2a2a] p-4 rounded-lg flex items-center">
+              <i class="fas fa-dumbbell text-red-600 mr-3"></i>
+              <span>Dumbbells</span>
+            </div>
+            <div class="bg-[#2a2a2a] p-4 rounded-lg flex items-center">
+              <i class="fas fa-weight-hanging text-red-600 mr-3"></i>
+              <span>Kettlebells</span>
+            </div>
+            <div class="bg-[#2a2a2a] p-4 rounded-lg flex items-center">
+              <i class="fas fa-running text-red-600 mr-3"></i>
+              <span>Jump Rope</span>
+            </div>
+            <div class="bg-[#2a2a2a] p-4 rounded-lg flex items-center">
+              <i class="fas fa-weight text-red-600 mr-3"></i>
+              <span>Resistance Bands</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div>
+          <h3 class="text-2xl font-bold mb-8 flex items-center">
+            <i class="fas fa-quote-left text-red-600 mr-3"></i>
+            MEMBER RESULTS
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-[#1e1e1e] p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <img src="https://t3.ftcdn.net/jpg/11/47/81/36/240_F_1147813696_dzlWntRX0lmzx9TCje09PF8izx4WJbyM.jpg"
+                    alt="Member" class="w-full h-full">
+                </div>
+                <div>
+                  <h4 class="font-bold">Sarah K.</h4>
+                  <p class="text-sm text-gray-400">Lost 28lbs in 12 weeks</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "The cardio-strength combo helped me shed fat while maintaining muscle. I've never been this toned!"
+              </p>
+            </div>
+            <div class="bg-[#1e1e1e] p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Member" class="w-full h-full">
+                </div>
+                <div>
+                  <h4 class="font-bold">Lisa M.</h4>
+                  <p class="text-sm text-gray-400">Improved endurance by 40%</p>
+                </div>
+              </div>
+              <p class="text-gray-300">
+                "I can now run 5K without stopping and lift weights I never thought possible. This program changed my life!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+  </main>
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.program-tab');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs and reset styles
+          tabs.forEach(t => {
+            t.classList.remove('active', 'border-b-2', 'border-red-600');
+            t.classList.add('text-gray-400');
+          });
+          
+          // Add active class to clicked tab
+          this.classList.add('active', 'border-b-2', 'border-red-600');
+          this.classList.remove('text-gray-400');
+          
+          // Hide all tab contents
+          document.querySelectorAll('.program-tab-content').forEach(content => {
+            content.classList.add('hidden');
+            content.classList.remove('active');
+          });
+          
+          // Show the corresponding content
+          const tabId = this.getAttribute('data-tab');
+          const contentToShow = document.getElementById(`${tabId}-content`);
+          if (contentToShow) {
+            contentToShow.classList.remove('hidden');
+            contentToShow.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+  <script type="module" src="/js/auth.js"></script>
+  <script type="module" src="/js/loadComponent.js"></script>
+</body>
+
+</html>
